@@ -7,11 +7,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RumeursComponent } from './rumeurs/rumeurs.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    RumeursComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,
@@ -23,4 +27,4 @@ import { NavbarComponent } from './navbar/navbar.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
