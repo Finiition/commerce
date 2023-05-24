@@ -12,11 +12,7 @@ public class controller_hello {
 
     @GetMapping("/")
     public String index() {
-        return "" +
-                "" +
-                "<di>Greetings from Spring Boot!<div>" +
-                "<t>test<t>" +
-                "" +
-                "";
+        return "<di>Greetings from Spring Boot!<div>" +
+                "<t>test<t>";
     }
 }
