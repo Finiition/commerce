@@ -4,3 +4,7 @@
  .gap {
     margin-right: 10px;
  }
+
+ .material-icons{
+   font-family: 'Material Icons' !important;
+}

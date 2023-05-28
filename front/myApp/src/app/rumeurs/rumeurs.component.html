@@ -1,239 +1,73 @@
+<div class="zoomed-image" *ngIf="divActive" (click)="divActive = false">
+  <img [src]="urlImageZoomed" alt="Image agrandie">
+</div>
+
 <mat-tab-group>
   <!-- Balenos -->
-  <mat-tab label="Balenos">
-    <mat-grid-list cols="4" rowHeight="1:1">
-      <!-- General -->
-      <mat-grid-tile>
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title><h1>General</h1></mat-card-title>
-            <mat-card-subtitle>Pnj : Clorince</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <img class="tile-image" src="../../assets/images/Velia/General_true.JPG">
-      </mat-grid-tile>
-
-      <!-- Matières premières -->
-      <mat-grid-tile>
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title><h1>Matières premières</h1></mat-card-title>
-            <mat-card-subtitle>Pnj : Bahar</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <img class="tile-image" src="../../assets/images/Velia/raw_true.JPG">
-      </mat-grid-tile>
-
-      <!-- Vêtements -->
-      <mat-grid-tile>
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title><h1>Vêtements</h1></mat-card-title>
-            <mat-card-subtitle>Pnj : Bahar</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <img class="tile-image" src="../../assets/images/Velia/Clothe_true.JPG" alt="">
-      </mat-grid-tile>
-
-      <!-- Médicaments -->
-      <mat-grid-tile>
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title><h1>Médicaments</h1></mat-card-title>
-            <mat-card-subtitle>Pnj : Zaaria</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <img class="tile-image" src="../../assets/images/Velia/Medic_true.JPG">
-      </mat-grid-tile>
-
-      <!-- Nourriture -->
-      <mat-grid-tile>
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title><h1>Nourriture</h1></mat-card-title>
-            <mat-card-subtitle>Pnj : Bahar</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <img class="tile-image" src="../../assets/images/Velia/Food_true.JPG">
-      </mat-grid-tile>
-
-      <!-- Militaire -->
-      <mat-grid-tile>
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title><h1>Militaire</h1></mat-card-title>
-            <mat-card-subtitle>Pnj : Tranan Underfoe</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <img class="tile-image" src="../../assets/images/Velia/Milit_true.JPG">
-      </mat-grid-tile>
-
-      <!-- Luxe -->
-      <mat-grid-tile>
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title><h1>Luxe</h1></mat-card-title>
-            <mat-card-subtitle>Pnj : Marsella</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <img class="tile-image" src="../../assets/images/Velia/luxe_true.JPG">
-      </mat-grid-tile>
-
-      <!-- Reliques -->
-      <mat-grid-tile>
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title><h1>Reliques</h1></mat-card-title>
-            <mat-card-subtitle>Pnj : Bahar</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <img class="tile-image" src="../../assets/images/Velia/Relique_true.JPG">
-      </mat-grid-tile>
+  <mat-tab label="Balenos" mat-icon="home">
+    <mat-grid-list cols="4" rowHeight="1:1" >
+      <div *ngFor="let itemTrading of balenos">
+        <mat-grid-tile >
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title><h1>{{itemTrading.title}}</h1></mat-card-title>
+              <mat-card-subtitle>Pnj : {{itemTrading.pnj}}</mat-card-subtitle>
+            </mat-card-header>
+          </mat-card>
+        </mat-grid-tile>
+  
+        <mat-grid-tile>
+          <img  class="zoomable-image" [src]="urlMain + itemTrading.url" (click)="openNewTab(urlMain + itemTrading.url)">
+        </mat-grid-tile>
+      </div>
     </mat-grid-list>
   </mat-tab>
 
   <!-- Serendia -->
-  <mat-tab label="Serendia">
-    <mat-grid-list cols="4" rowHeight="1:1">
-      <!-- General -->
-      <mat-grid-tile>
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title><h1>General</h1></mat-card-title>
-            <mat-card-subtitle>Pnj : Bahar</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <img class="tile-image" src="../../assets/images/Heidel/Gene_true.JPG">
-      </mat-grid-tile>
-
-      <!-- Matières premières -->
-      <mat-grid-tile>
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title><h1>Matières premières</h1></mat-card-title>
-            <mat-card-subtitle>Pnj : Suita</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <img class="tile-image" src="../../assets/images/Heidel/Raw_true.JPG">
-      </mat-grid-tile>
-
-      <!-- Vêtements -->
-      <mat-grid-tile>
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title><h1>Vêtements</h1></mat-card-title>
-            <mat-card-subtitle>Pnj : Bahar</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <img class="tile-image" src="../../assets/images/Heidel/Clothe_true.JPG">
-      </mat-grid-tile>
-
-      <!-- Médicaments -->
-      <mat-grid-tile>
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title><h1>Médicaments</h1></mat-card-title>
-            <mat-card-subtitle>Pnj : Lara</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <img class="tile-image" src="../../assets/images/Heidel/Medic_true.JPG">
-      </mat-grid-tile>
-
-      <!-- Nourriture -->
-      <mat-grid-tile>
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title><h1>Nourriture</h1></mat-card-title>
-            <mat-card-subtitle>Pnj : Bahar</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <img class="tile-image" src="../../assets/images/Heidel/food_true.JPG">
-      </mat-grid-tile>
-
-      <!-- Militaire -->
-      <mat-grid-tile>
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title><h1>Militaire</h1></mat-card-title>
-            <mat-card-subtitle>Pnj : Techthon</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <img class="tile-image" src="../../assets/images/Heidel/Milit_true.JPG">
-      </mat-grid-tile>
-
-      <!-- Luxe -->
-      <mat-grid-tile>
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title><h1>Luxe</h1></mat-card-title>
-            <mat-card-subtitle>Pnj : George Fusto</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <img class="tile-image" src="../../assets/images/Heidel/Luxe_true.JPG">
-      </mat-grid-tile>
-
-      <!-- Reliques -->
-      <mat-grid-tile>
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title><h1>Reliques</h1></mat-card-title>
-            <mat-card-subtitle>Pnj : Bahar</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <img class="tile-image" src="../../assets/images/Heidel/relique_true.JPG">
-      </mat-grid-tile>
+  <mat-tab label="Serendia" mat-icon="home">
+    <mat-grid-list cols="4" rowHeight="1:1" >
+      <div *ngFor="let itemTrading of serendia">
+        <mat-grid-tile >
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title><h1>{{itemTrading.title}}</h1></mat-card-title>
+              <mat-card-subtitle>Pnj : {{itemTrading.pnj}}</mat-card-subtitle>
+            </mat-card-header>
+  
+          </mat-card>
+        </mat-grid-tile>
+  
+        <mat-grid-tile>
+          <img class="tile-image" [src]="urlMain + itemTrading.url" (click)="openNewTab(urlMain + itemTrading)">
+        </mat-grid-tile>
+      </div>
     </mat-grid-list>
   </mat-tab>
 
   <!-- Calpheon -->
+  <mat-tab label="Calpheon" mat-icon="home">
+    <mat-grid-list cols="4" rowHeight="1:1" >
+      <div *ngFor="let itemTrading of calpheon">
+        <mat-grid-tile >
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title><h1>{{itemTrading.title}}</h1></mat-card-title>
+              <mat-card-subtitle>Pnj : {{itemTrading.pnj}}</mat-card-subtitle>
+            </mat-card-header>
+  
+          </mat-card>
+        </mat-grid-tile>
+  
+        <mat-grid-tile>
+          <img class="tile-image" [src]="urlMain + itemTrading.url" (click)="handleImageClick(itemTrading)">
+        </mat-grid-tile>
+      </div>
+    </mat-grid-list>
+  </mat-tab>
+
+
+
+
   <mat-tab label="Calpheon">
     <mat-grid-list cols="4" rowHeight="1:1">
       <!-- General -->
@@ -828,7 +662,7 @@
         <mat-card>
           <mat-card-header>
             <mat-card-title><h1>General</h1></mat-card-title>
-            <mat-card-subtitle>Pnj : ???</mat-card-subtitle>
+            <mat-card-subtitle>Pnj : Fughar</mat-card-subtitle>
           </mat-card-header>
         </mat-card>
       </mat-grid-tile>
@@ -912,7 +746,7 @@
         <mat-card>
           <mat-card-header>
             <mat-card-title><h1>Luxe</h1></mat-card-title>
-            <mat-card-subtitle>Pnj : ???</mat-card-subtitle>
+            <mat-card-subtitle>Pnj : Aemag</mat-card-subtitle>
           </mat-card-header>
         </mat-card>
       </mat-grid-tile>

@@ -16,6 +16,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RumeursComponent } from './rumeurs/rumeurs.component';
 import { AccueilComponent } from './accueil/accueil.component';
 
+import { NgxImageZoomModule } from 'ngx-image-zoom';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +36,7 @@ import { AccueilComponent } from './accueil/accueil.component';
     MatIconModule,
     MatGridListModule,    
     MatTabsModule,
+    NgxImageZoomModule
   ],
   providers: [],
   bootstrap: [AppComponent]
