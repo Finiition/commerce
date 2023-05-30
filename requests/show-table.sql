@@ -1,0 +1,2 @@
+USE commerce;
+SHOW TABLES;

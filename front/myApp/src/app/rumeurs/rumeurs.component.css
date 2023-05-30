@@ -1,6 +1,8 @@
 .tile-image {
-  width:auto;
-  height: 400px;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .zoomed-image {
@@ -29,4 +31,28 @@
 .zoomed-image.active {
   opacity: 1;
   pointer-events: auto;
+}
+
+.center{
+  justify-content: center;
+  align-items: center;
+}
+
+.hauteur150{
+  height: 150px;
+  max-width: 100%;
+}
+
+.hauteur200{
+  height: 200px;
+  max-width: 400px;
+}
+
+.max{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.tile-image:hover {
+  transform: scale(1.3);
 }

@@ -14,7 +14,7 @@ export class RumeursComponent {
   
   public urlImageZoomed = "";
 
-  urlMain = "../../assets/images/"
+  urlMain = "../../assets/images/";
   balenos = [
     { url: 'Velia/General_true.JPG', title: 'General', pnj: 'Clorince' },
     { url: 'Velia/raw_true.JPG', title: 'Matières premières', pnj: 'Bahar'  },
@@ -48,15 +48,68 @@ export class RumeursComponent {
     { url: 'Calpheon/Relic_true.JPG', title: 'Reliques', pnj: '???'  },
   ];
 
+  mediah = [
+    { url: 'Mediah/Gene-true.JPG', title: 'General', pnj: "Nelople" },
+    { url: 'Mediah/raw_true.JPG', title: 'Matières premières', pnj: 'Quina'  },
+    { url: 'Mediah/Clothe_true.JPG', title: 'Vêtements', pnj: 'Lucy Benkum'  },
+    { url: 'Mediah/Medic_true.JPG', title: 'Médicaments', pnj: 'Lashir'  },
+    { url: 'Mediah/food_true.JPG', title: 'Nourriture', pnj: '???'  },
+    { url: 'Mediah/Mili_true.JPG', title: 'Militaire', pnj: 'Mevo Muranan'  },
+    { url: 'Mediah/luxe_true.JPG', title: 'Luxe', pnj: 'Belgar'  },
+    { url: 'Mediah/relic_true.JPG', title: 'Reliques', pnj: 'Patrigio'  },
+  ];
+
+  valencia = [
+    { url: 'Valencia/General_Goods_true.JPG', title: 'General', pnj: "???" },
+    { url: 'Valencia/raw_true.JPG', title: 'Matières premières', pnj: '???'  },
+    { url: 'Valencia/clothe_true.JPG', title: 'Vêtements', pnj: 'Burita Allon'  },
+    { url: 'Valencia/medic_true.JPG', title: 'Médicaments', pnj: '???'  },
+    { url: 'Valencia/food_true.JPG', title: 'Nourriture', pnj: '???'  },
+    { url: 'Valencia/mili_true.JPG', title: 'Militaire', pnj: '???'  },
+    { url: 'Valencia/luxe_true.JPG', title: 'Luxe', pnj: '???'  },
+    { url: 'Valencia/relic_true.JPG', title: 'Reliques', pnj: '???'  },
+  ];
+
+  kamasylve = [
+    { url: 'Mediah/Gene-true.JPG', title: 'General', pnj: "Nelople" },
+    { url: 'Mediah/raw_true.JPG', title: 'Matières premières', pnj: 'Quina'  },
+    { url: 'Mediah/Clothe_true.JPG', title: 'Vêtements', pnj: 'Lucy Benkum'  },
+    { url: 'Mediah/Medic_true.JPG', title: 'Médicaments', pnj: 'Lashir'  },
+    { url: 'Mediah/food_true.JPG', title: 'Nourriture', pnj: '???'  },
+    { url: 'Mediah/Mili_true.JPG', title: 'Militaire', pnj: 'Mevo Muranan'  },
+    { url: 'Mediah/luxe_true.JPG', title: 'Luxe', pnj: 'Belgar'  },
+    { url: 'Mediah/relic_true.JPG', title: 'Reliques', pnj: 'Patrigio'  },
+  ];
+
+  drieghan = [
+    { url: 'Mediah/Gene-true.JPG', title: 'General', pnj: "Nelople" },
+    { url: 'Mediah/raw_true.JPG', title: 'Matières premières', pnj: 'Quina'  },
+    { url: 'Mediah/Clothe_true.JPG', title: 'Vêtements', pnj: 'Lucy Benkum'  },
+    { url: 'Mediah/Medic_true.JPG', title: 'Médicaments', pnj: 'Lashir'  },
+    { url: 'Mediah/food_true.JPG', title: 'Nourriture', pnj: '???'  },
+    { url: 'Mediah/Mili_true.JPG', title: 'Militaire', pnj: 'Mevo Muranan'  },
+    { url: 'Mediah/luxe_true.JPG', title: 'Luxe', pnj: 'Belgar'  },
+    { url: 'Mediah/relic_true.JPG', title: 'Reliques', pnj: 'Patrigio'  },
+  ];
+
+  montagne = [
+    { url: 'Mediah/Gene-true.JPG', title: 'General', pnj: "Nelople" },
+    { url: 'Mediah/raw_true.JPG', title: 'Matières premières', pnj: 'Quina'  },
+    { url: 'Mediah/Clothe_true.JPG', title: 'Vêtements', pnj: 'Lucy Benkum'  },
+    { url: 'Mediah/Medic_true.JPG', title: 'Médicaments', pnj: 'Lashir'  },
+    { url: 'Mediah/food_true.JPG', title: 'Nourriture', pnj: '???'  },
+    { url: 'Mediah/Mili_true.JPG', title: 'Militaire', pnj: 'Mevo Muranan'  },
+    { url: 'Mediah/luxe_true.JPG', title: 'Luxe', pnj: 'Belgar'  },
+    { url: 'Mediah/relic_true.JPG', title: 'Reliques', pnj: 'Patrigio'  },
+  ];
+
   handleImageClick(image: any) {
     // Logique pour gérer le clic sur une image
     console.log('Image cliquée :', image);
   }
 
   openNewTab(urlImage: any) {
-    console.log('Image cliquée :', urlImage);
     this.divActive = true;
     this.urlImageZoomed = "http://localhost:4200/" + urlImage;
-    /* this.windowRef.nativeWindow.open("http://localhost:4200/" + urlImage, '_blank'); */
   }
 }
