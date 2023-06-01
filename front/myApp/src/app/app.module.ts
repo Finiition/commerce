@@ -18,6 +18,7 @@ import { RumeursComponent } from './rumeurs/rumeurs.component';
 import { AccueilComponent } from './accueil/accueil.component';
 
 import { NgxImageZoomModule } from 'ngx-image-zoom';
+import { ZoneComponent } from './zone/zone.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NgxImageZoomModule } from 'ngx-image-zoom';
     NavbarComponent,
     RumeursComponent,
     AccueilComponent,
+    ZoneComponent,
   ],
   imports: [
     HttpClientModule,

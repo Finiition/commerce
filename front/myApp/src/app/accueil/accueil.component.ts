@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -6,17 +6,17 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './accueil.component.html',
   styleUrls: ['./accueil.component.css']
 })
-export class AccueilComponent {
+export class AccueilComponent implements OnInit{
+  listZones!: any[];
+
   constructor(private http: HttpClient) {}
 
-  listOnglet = this.http.get('http://localhost:8080/api/zone').subscribe(
-    (response) => {
-      console.log(response); // Traitez la réponse ici
-    },
-    (error) => {
-      console.error(error); // Gérez les erreurs ici
-    }
-  );
+  ngOnInit(): void {
+    this.http.get<any[]>('http://localhost:8080/api/zone').subscribe(data => {
+      this.listZones = data;
+      console.log(this.listZones);
+    });
+  }
 }
 
 
