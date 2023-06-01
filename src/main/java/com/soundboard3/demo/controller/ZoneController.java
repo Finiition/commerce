@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
@@ -15,16 +16,32 @@ import java.util.List;
 public class ZoneController {
     private ZoneService zoneService;
 
-    @GetMapping("test")
+    // CREATE
+    @PostMapping
+    public ResponseEntity<Zone> createZone(@RequestBody Zone zone){
+        Zone savedZone = zoneService.createZone(zone);
+        return new ResponseEntity<>(savedZone, HttpStatus.CREATED);
+    }
+
+    // READ
+    @GetMapping
     @ResponseStatus(HttpStatus.CREATED)
     public List<Zone> getAllZone(){
         return zoneService.getAllZones();
     }
 
-    // build create User REST API
-    @PostMapping
-    public ResponseEntity<Zone> createZone(@RequestBody Zone zone){
-        Zone savedZone = zoneService.createZone(zone);
-        return new ResponseEntity<>(savedZone, HttpStatus.CREATED);
+    // UPDATE
+
+    // DELETE
+    @DeleteMapping(value = "{id}")
+    public ResponseEntity<Object> deleteZone(@PathVariable Long id){
+        Optional<Zone> zoneOptional = Optional.ofNullable(zoneService.getZoneById(id));
+
+        if (zoneOptional.isPresent()) {
+            zoneService.deleteZone(id);
+            return ResponseEntity.ok("Resource deleted successfully");
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

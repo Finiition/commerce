@@ -4,6 +4,7 @@ import com.soundboard3.demo.entity.Zone;
 import com.soundboard3.demo.repository.ZoneRepository;
 import com.soundboard3.demo.services.ZoneService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
