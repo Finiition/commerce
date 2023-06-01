@@ -35,7 +35,7 @@ public class ZoneController {
     // DELETE
     @DeleteMapping(value = "{id}")
     public ResponseEntity<Object> deleteZone(@PathVariable Long id){
-        Optional<Zone> zoneOptional = Optional.ofNullable(zoneService.getZoneById(id));
+        Optional<Zone> zoneOptional = zoneService.getZoneById(id);
 
         if (zoneOptional.isPresent()) {
             zoneService.deleteZone(id);
